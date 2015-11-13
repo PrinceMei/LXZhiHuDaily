@@ -9,8 +9,21 @@
 #import "ContentsViewController.h"
 #import <UINavigationBar+Awesome.h>
 #import <SWRevealViewController.h>
+#import <UIImageView+WebCache.h>
+#import "MainContentTableViewCell.h"
+#import "ParallaxHeaderView.h"
+#import "HttpRequest.h"
 
-@interface ContentsViewController ()
+#define kScreenWidth self.view.bounds.size.width
+#define kScreenHeight self.view.bounds.size.height
+#define kScrollImageHeight 154
+
+@interface ContentsViewController (){
+    SDCycleScrollView *_scrollImageView;
+    ParallaxHeaderView *_headerView;
+    NSArray *_topStoriesArray;
+    NSArray *_storiesArray;
+}
 
 @end
 
@@ -22,13 +35,23 @@
     [self.view addSubview:self.tableView];
 }
 
-- (UITableView*)tableView{
-    if (!_tableView) {
-        _tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
-        _tableView.delegate = self;
-        _tableView.dataSource = self;
-    }
-    return _tableView;
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [self loadData];
+}
+
+#pragma mark - loadData
+- (void)loadData {
+    
+    [HttpRequest getTopStoryCompletion:^(NSArray *array) {
+        _topStoriesArray = array[0];
+        _storiesArray = array[1];
+
+        [self addTableViewHeader];
+        [self.tableView reloadData];
+    } failed:^(NSError *error) {
+        NSLog(@"%@",error);
+    }];
 }
 
 #pragma mark - initNavigationBar
@@ -49,19 +72,81 @@
     
 }
 
+#pragma mark - addTableViewHeader
+- (void)addTableViewHeader {
+    
+    //初始化照片轮播器
+    _scrollImageView = [[SDCycleScrollView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kScrollImageHeight)];
+    _scrollImageView.titleLabelBackgroundColor = [UIColor clearColor];
+    _scrollImageView.titleLabelTextColor = [UIColor whiteColor];
+    _scrollImageView.titleLabelHeight = 100;
+    _scrollImageView.titleLabelTextFont = [UIFont boldSystemFontOfSize:17.0];
+    _scrollImageView.autoScrollTimeInterval = 6;
+    _scrollImageView.delegate = self;
+    _scrollImageView.pageControlStyle = SDCycleScrollViewPageContolStyleClassic;
+    
+    NSMutableArray *urlArray = [NSMutableArray array];
+    NSMutableArray *titleAray = [NSMutableArray array];
+    for (TopStories *top in _topStoriesArray) {
+        NSString *urlStr = top.image;
+        NSLog(@"%@",urlStr);
+        NSString *titleStr = top.title;
+        [urlArray addObject:urlStr];
+        [titleAray addObject:titleStr];
+    }
+    _scrollImageView.imageURLStringsGroup = urlArray;
+    _scrollImageView.titlesGroup = titleAray;
+    
+    //初始化可以伸缩放大的表头
+    _headerView = [ParallaxHeaderView parallaxHeaderViewWithSubView:_scrollImageView forSize:CGSizeMake(kScreenWidth, kScrollImageHeight)];
+    _headerView.delegate = self;
+    self.tableView.tableHeaderView = _headerView;
+    
+    //给照片轮播器添加阴影效果
+    UIImageView *topMaskImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 100)];
+    topMaskImageView.image = [UIImage imageNamed:@"News_Image_Mask"];
+    [_scrollImageView addSubview:topMaskImageView];
+    
+    UIImageView *bottomMaskImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 100, kScreenWidth, kScreenHeight - 100)];
+    bottomMaskImageView.image = [UIImage imageNamed:@"Home_Image_Mask"];
+    [_scrollImageView addSubview:bottomMaskImageView];
+    
+}
+
 #pragma mark - UITableViewDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 20;
+    return _storiesArray.count;
 }
 
 - (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    static NSString *cellIdentifier = @"cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
-    }
-    cell.textLabel.text = [NSString stringWithFormat:@"cell %ld",indexPath.row];
+    MainContentTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"mainContentCell"];
+    Stories *story = _storiesArray[indexPath.row];
+    [cell.contentImageView sd_setImageWithURL:[NSURL URLWithString:story.images[0]]];
+    cell.contentLabel.text = story.title;
     return cell;
+}
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    CGFloat offsetY = scrollView.contentOffset.y;
+    UIColor *navigaitonBarColor = [UIColor colorWithRed:0.067 green:0.561 blue:0.910 alpha:1.000];
+    CGFloat alpha = (64 + offsetY) / kScrollImageHeight ;
+    
+    //根据偏移量来设置导航栏的透明度
+    [self.navigationController.navigationBar lt_setBackgroundColor:[navigaitonBarColor colorWithAlphaComponent:alpha]];
+    
+    if (scrollView == self.tableView) {
+        [_headerView layoutHeaderViewForScrollViewOffset:scrollView.contentOffset];
+    }
+}
+
+#pragma mark - SDCycleScrollViewDelegate
+- (void)cycleScrollView:(SDCycleScrollView *)cycleScrollView didSelectItemAtIndex:(NSInteger)index{
+    NSLog(@"选择了第%ld张照片",index);
+}
+
+#pragma mark - ParallaxHeaderViewDelegate
+- (void)lockDirection{
+    [self.tableView setContentOffset:CGPointMake(0, - kScrollImageHeight)];
 }
 
 @end

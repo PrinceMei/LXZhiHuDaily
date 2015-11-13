@@ -7,9 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <SDCycleScrollView.h>
+#import "ParallaxHeaderView.h"
 
-@interface ContentsViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>
+@interface ContentsViewController : UIViewController<UITableViewDataSource,UITableViewDelegate,SDCycleScrollViewDelegate,ParallaxHeaderViewDelegate>
 
-@property (nonatomic, strong) UITableView *tableView;
+//@property (nonatomic, strong) UITableView *tableView;
+
+
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end
