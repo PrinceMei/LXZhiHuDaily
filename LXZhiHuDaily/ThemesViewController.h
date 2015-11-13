@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  ThemesViewController.h
 //  LXZhiHuDaily
 //
 //  Created by Lonely Stone on 15/11/13.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface ThemesViewController : UIViewController
 
 @end
-

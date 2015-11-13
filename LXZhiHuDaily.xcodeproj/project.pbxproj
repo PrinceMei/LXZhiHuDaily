@@ -9,12 +9,17 @@
 /* Begin PBXBuildFile section */
 		524D9F0A1BF56426002F0491 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 524D9F091BF56426002F0491 /* main.m */; };
 		524D9F0D1BF56426002F0491 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 524D9F0C1BF56426002F0491 /* AppDelegate.m */; };
-		524D9F101BF56426002F0491 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 524D9F0F1BF56426002F0491 /* ViewController.m */; };
 		524D9F131BF56426002F0491 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 524D9F111BF56426002F0491 /* Main.storyboard */; };
 		524D9F151BF56426002F0491 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 524D9F141BF56426002F0491 /* Assets.xcassets */; };
 		524D9F181BF56426002F0491 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 524D9F161BF56426002F0491 /* LaunchScreen.storyboard */; };
 		524D9F231BF56426002F0491 /* LXZhiHuDailyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 524D9F221BF56426002F0491 /* LXZhiHuDailyTests.m */; };
 		524D9F2E1BF56426002F0491 /* LXZhiHuDailyUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 524D9F2D1BF56426002F0491 /* LXZhiHuDailyUITests.m */; };
+		524D9F3E1BF56659002F0491 /* ThemesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 524D9F3D1BF56659002F0491 /* ThemesViewController.m */; };
+		524D9F421BF56677002F0491 /* ContentsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 524D9F411BF56677002F0491 /* ContentsViewController.m */; };
+		524D9F441BF56D4E002F0491 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 524D9F431BF56D4E002F0491 /* Default@2x.png */; };
+		524D9F4A1BF57398002F0491 /* ParallaxHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 524D9F471BF57398002F0491 /* ParallaxHeaderView.m */; };
+		524D9F4B1BF57398002F0491 /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = 524D9F491BF57398002F0491 /* UIImage+ImageEffects.m */; };
+		82BD5B2108CDFB4AAFBCEC67 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7975569AB5ABA1E63A436D85 /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,8 +44,6 @@
 		524D9F091BF56426002F0491 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		524D9F0B1BF56426002F0491 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		524D9F0C1BF56426002F0491 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		524D9F0E1BF56426002F0491 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		524D9F0F1BF56426002F0491 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		524D9F121BF56426002F0491 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		524D9F141BF56426002F0491 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		524D9F171BF56426002F0491 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -51,6 +54,18 @@
 		524D9F291BF56426002F0491 /* LXZhiHuDailyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LXZhiHuDailyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		524D9F2D1BF56426002F0491 /* LXZhiHuDailyUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LXZhiHuDailyUITests.m; sourceTree = "<group>"; };
 		524D9F2F1BF56426002F0491 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		524D9F3C1BF56659002F0491 /* ThemesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThemesViewController.h; sourceTree = "<group>"; };
+		524D9F3D1BF56659002F0491 /* ThemesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThemesViewController.m; sourceTree = "<group>"; };
+		524D9F401BF56677002F0491 /* ContentsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContentsViewController.h; sourceTree = "<group>"; };
+		524D9F411BF56677002F0491 /* ContentsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContentsViewController.m; sourceTree = "<group>"; };
+		524D9F431BF56D4E002F0491 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		524D9F461BF57398002F0491 /* ParallaxHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParallaxHeaderView.h; sourceTree = "<group>"; };
+		524D9F471BF57398002F0491 /* ParallaxHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParallaxHeaderView.m; sourceTree = "<group>"; };
+		524D9F481BF57398002F0491 /* UIImage+ImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageEffects.h"; sourceTree = "<group>"; };
+		524D9F491BF57398002F0491 /* UIImage+ImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageEffects.m"; sourceTree = "<group>"; };
+		7975569AB5ABA1E63A436D85 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		A05C0CDFF7BB7F80F88F8C8A /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		D33210E76DFE89B8463AB6E8 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +73,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				82BD5B2108CDFB4AAFBCEC67 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,6 +101,8 @@
 				524D9F211BF56426002F0491 /* LXZhiHuDailyTests */,
 				524D9F2C1BF56426002F0491 /* LXZhiHuDailyUITests */,
 				524D9F061BF56426002F0491 /* Products */,
+				A82B75FA3532732F110159C9 /* Pods */,
+				67B3DE26B2B0BE9CDA8E7622 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -103,9 +121,11 @@
 			children = (
 				524D9F0B1BF56426002F0491 /* AppDelegate.h */,
 				524D9F0C1BF56426002F0491 /* AppDelegate.m */,
-				524D9F0E1BF56426002F0491 /* ViewController.h */,
-				524D9F0F1BF56426002F0491 /* ViewController.m */,
+				524D9F3F1BF56664002F0491 /* contents */,
+				524D9F3B1BF5663E002F0491 /* Themes */,
+				524D9F4C1BF5739D002F0491 /* tools */,
 				524D9F111BF56426002F0491 /* Main.storyboard */,
+				524D9F431BF56D4E002F0491 /* Default@2x.png */,
 				524D9F141BF56426002F0491 /* Assets.xcassets */,
 				524D9F161BF56426002F0491 /* LaunchScreen.storyboard */,
 				524D9F191BF56426002F0491 /* Info.plist */,
@@ -140,6 +160,60 @@
 			path = LXZhiHuDailyUITests;
 			sourceTree = "<group>";
 		};
+		524D9F3B1BF5663E002F0491 /* Themes */ = {
+			isa = PBXGroup;
+			children = (
+				524D9F3C1BF56659002F0491 /* ThemesViewController.h */,
+				524D9F3D1BF56659002F0491 /* ThemesViewController.m */,
+			);
+			name = Themes;
+			sourceTree = "<group>";
+		};
+		524D9F3F1BF56664002F0491 /* contents */ = {
+			isa = PBXGroup;
+			children = (
+				524D9F451BF5722C002F0491 /* controllers */,
+			);
+			name = contents;
+			sourceTree = "<group>";
+		};
+		524D9F451BF5722C002F0491 /* controllers */ = {
+			isa = PBXGroup;
+			children = (
+				524D9F401BF56677002F0491 /* ContentsViewController.h */,
+				524D9F411BF56677002F0491 /* ContentsViewController.m */,
+			);
+			name = controllers;
+			sourceTree = "<group>";
+		};
+		524D9F4C1BF5739D002F0491 /* tools */ = {
+			isa = PBXGroup;
+			children = (
+				524D9F461BF57398002F0491 /* ParallaxHeaderView.h */,
+				524D9F471BF57398002F0491 /* ParallaxHeaderView.m */,
+				524D9F481BF57398002F0491 /* UIImage+ImageEffects.h */,
+				524D9F491BF57398002F0491 /* UIImage+ImageEffects.m */,
+			);
+			name = tools;
+			sourceTree = "<group>";
+		};
+		67B3DE26B2B0BE9CDA8E7622 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7975569AB5ABA1E63A436D85 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A82B75FA3532732F110159C9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D33210E76DFE89B8463AB6E8 /* Pods.debug.xcconfig */,
+				A05C0CDFF7BB7F80F88F8C8A /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -147,9 +221,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 524D9F321BF56426002F0491 /* Build configuration list for PBXNativeTarget "LXZhiHuDaily" */;
 			buildPhases = (
+				F0ED5EF1AE31C9B555C61319 /* Check Pods Manifest.lock */,
 				524D9F011BF56426002F0491 /* Sources */,
 				524D9F021BF56426002F0491 /* Frameworks */,
 				524D9F031BF56426002F0491 /* Resources */,
+				EF90C72516CD71E1B1F91E74 /* Embed Pods Frameworks */,
+				6742D40DF0945670718D851F /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -247,6 +324,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				524D9F181BF56426002F0491 /* LaunchScreen.storyboard in Resources */,
+				524D9F441BF56D4E002F0491 /* Default@2x.png in Resources */,
 				524D9F151BF56426002F0491 /* Assets.xcassets in Resources */,
 				524D9F131BF56426002F0491 /* Main.storyboard in Resources */,
 			);
@@ -268,14 +346,65 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		6742D40DF0945670718D851F /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EF90C72516CD71E1B1F91E74 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F0ED5EF1AE31C9B555C61319 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		524D9F011BF56426002F0491 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				524D9F101BF56426002F0491 /* ViewController.m in Sources */,
+				524D9F4A1BF57398002F0491 /* ParallaxHeaderView.m in Sources */,
+				524D9F421BF56677002F0491 /* ContentsViewController.m in Sources */,
+				524D9F4B1BF57398002F0491 /* UIImage+ImageEffects.m in Sources */,
 				524D9F0D1BF56426002F0491 /* AppDelegate.m in Sources */,
 				524D9F0A1BF56426002F0491 /* main.m in Sources */,
+				524D9F3E1BF56659002F0491 /* ThemesViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -412,6 +541,7 @@
 		};
 		524D9F331BF56426002F0491 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D33210E76DFE89B8463AB6E8 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = LXZhiHuDaily/Info.plist;
@@ -423,6 +553,7 @@
 		};
 		524D9F341BF56426002F0491 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A05C0CDFF7BB7F80F88F8C8A /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = LXZhiHuDaily/Info.plist;
@@ -499,6 +630,7 @@
 				524D9F341BF56426002F0491 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		524D9F351BF56426002F0491 /* Build configuration list for PBXNativeTarget "LXZhiHuDailyTests" */ = {
 			isa = XCConfigurationList;
@@ -507,6 +639,7 @@
 				524D9F371BF56426002F0491 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		524D9F381BF56426002F0491 /* Build configuration list for PBXNativeTarget "LXZhiHuDailyUITests" */ = {
 			isa = XCConfigurationList;
@@ -515,6 +648,7 @@
 				524D9F3A1BF56426002F0491 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
